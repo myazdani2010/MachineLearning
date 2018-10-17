@@ -57,3 +57,37 @@ X_test = sc_X.transform(X_test)
 
 
 
+
+#-----------------------------------------
+##### Fitt simple linear regression #####  
+##### to the training set ##### 
+#-----------------------------------------
+
+from sklearn.linear_model import LinearRegression
+
+regressor = LinearRegression() # create machine 
+regressor.fit(X_train, y_train) # train the machine with data
+
+
+
+
+
+#------------------------------------------------------
+##### Predicting the Test set result #####
+#------------------------------------------------------
+# here we use the test dataset to see how our trained machine is predecting the result
+y_pred = regressor.predict(X_test) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
