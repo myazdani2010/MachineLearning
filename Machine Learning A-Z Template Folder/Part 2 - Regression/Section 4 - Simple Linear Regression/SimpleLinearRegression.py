@@ -1,8 +1,15 @@
 
 
 """
-Dataset contains 30 records of employee's YearsExperience and Salary. Here we want to study the correlation between the 
-years of experience and the salary.
+### Simple Liner Regression ####
+
+In the simple Linear Regression we have only 1 independent variable X which is YearsExperience 
+
+Features:       YearsExperience, Salary
+Records Count:  30
+
+Dataset contains employee's YearsExperience and Salary records. 
+Here we want to study the correlation between the years of experience and the salary.
 
 """
 
