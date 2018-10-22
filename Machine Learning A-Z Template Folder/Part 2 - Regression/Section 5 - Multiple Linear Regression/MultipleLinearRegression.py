@@ -29,7 +29,7 @@ y = dataset.iloc[:, 4]
 
 
 #------------------------------------------
-##### 3- Categorical Data  #####
+##### 2- Categorical Data  #####
 #------------------------------------------
 
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
@@ -54,13 +54,27 @@ X = oneHotEncoder.fit_transform(X).toarray()
 
 
 #------------------------------------------
-##### 4- Split to Train and Test  #####
+##### 3- Split to Train and Test  #####
 #------------------------------------------
 
 from sklearn.cross_validation import train_test_split
 
 # feed train and test sets based on 80/20 %
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0) 
+
+
+
+
+
+#----------------------------------------------------------------
+##### 4- Fit Multiple Linear Regression to the Training set #####
+#----------------------------------------------------------------
+
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
+
+
 
 
 
