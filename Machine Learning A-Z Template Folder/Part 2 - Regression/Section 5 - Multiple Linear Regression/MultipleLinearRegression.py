@@ -47,7 +47,7 @@ X = oneHotEncoder.fit_transform(X).toarray()
 # now we should have the State column converted to 3 new numerical columns which contains 0s and 1s
 
 # Avoid Dummy Variable trap by removing any of the 3 new created columns from the Categorial column State
- X = X[:, 1:]
+X = X[:,1:] # removes the 1st column
 
 
 
@@ -77,4 +77,11 @@ regressor.fit(X_train, y_train)
 
 
 
+
+
+#------------------------------------------
+##### 5- Predict the test set results #####
+#------------------------------------------
+
+y_pred = regressor.predict(X_test)
 
