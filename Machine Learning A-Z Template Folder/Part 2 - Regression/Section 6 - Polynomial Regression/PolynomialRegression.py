@@ -70,8 +70,10 @@ lin_reg_4.fit(X_poly_4, y)
 
 
 # Visualising the Polynomial Regression results 
+X_grid = np.arange(min(X), max(X), 0.1)
+X_grid = X_grid.reshape((len(X_grid), 1))
 plt.scatter(X, y, color = 'red')
-plt.plot(X, lin_reg_4.predict(poly_reg_degree_4.fit_transform(X)), color = 'blue')
+plt.plot(X_grid, lin_reg_4.predict(poly_reg_degree_4.fit_transform(X_grid)), color = 'blue')
 plt.title('Truth or Bluff (Polynomial Regression)')
 plt.xlabel('position level')
 plt.ylabel('salary')
