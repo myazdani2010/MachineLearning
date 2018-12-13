@@ -55,3 +55,26 @@ plt.title('Truth or Bluff (Polynomial Regression)')
 plt.xlabel('position level')
 plt.ylabel('salary')
 plt.show()
+
+
+print("\nThe above graph shows the Polynomial Regression predection. As we can see the predection is much better "+
+      "and closer to the real values. To even get the better result we can change the Degree of the regression. "+
+      "Following is after changing the Degree to 4 from 2. ")
+
+
+# Fitting Polynomial Regression to the dataset with differect degree
+poly_reg_degree_4 = PolynomialFeatures(degree=4) # this creates 3 extra feature 
+X_poly_4 = poly_reg_degree_4.fit_transform(X)
+lin_reg_4 = LinearRegression()
+lin_reg_4.fit(X_poly_4, y)
+
+
+# Visualising the Polynomial Regression results 
+plt.scatter(X, y, color = 'red')
+plt.plot(X, lin_reg_4.predict(poly_reg_degree_4.fit_transform(X)), color = 'blue')
+plt.title('Truth or Bluff (Polynomial Regression)')
+plt.xlabel('position level')
+plt.ylabel('salary')
+plt.show()
+
+print("\nAs we see this time we have done even better with slightly changing the degree 2 to 4.")
