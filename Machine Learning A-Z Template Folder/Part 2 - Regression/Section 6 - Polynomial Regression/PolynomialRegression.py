@@ -80,3 +80,15 @@ plt.ylabel('salary')
 plt.show()
 
 print("\nAs we see this time we have done even better with slightly changing the degree 2 to 4.")
+
+
+# Predicting a new result with Linear Regression
+print("\nPredict salary of a employee with 6.5 years of experience using Linear Regression:\n")
+print(lin_reg.predict(6.5))
+
+
+#Predicting a new result wth Polynomial Regression 
+print("\nNow we predict using the Polynomial Regression:\n")
+print(lin_reg_4.predict(poly_reg_degree_4.fit_transform(6.5)))
+
+

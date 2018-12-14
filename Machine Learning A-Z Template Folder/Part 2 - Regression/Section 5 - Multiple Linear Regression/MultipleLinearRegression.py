@@ -98,3 +98,27 @@ import statsmodels.formula.api as sm
 # add column of 1s in the beggining of the matrix
 X = np.append(arr = np.ones((50, 1)).astype(int), values = X, axis = 1)
 
+# X_opt will have matrix of variables that have high impact on the profit
+X_opt = X[:, [0, 1, 2, 3, 4, 5]] #copy entire X
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit() # fit the model with all possible predictors 
+regressor_OLS.summary() # view the summary and P-value
+
+# remove the independent variable that has highest p-value (P>t) and t=0.05 = 5%
+X_opt = X[:, [0, 1, 3, 4, 5]] #copy entire X
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit() # fit the model with all possible predictors 
+regressor_OLS.summary() # view the summary and P-value
+
+# remove the independent variable that has highest p-value (P>t) and t=0.05 = 5%
+X_opt = X[:, [0, 3, 4, 5]] #copy entire X
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit() # fit the model with all possible predictors 
+regressor_OLS.summary() # view the summary and P-value
+
+# remove the independent variable that has highest p-value (P>t) and t=0.05 = 5%
+X_opt = X[:, [0, 3, 5]] #copy entire X
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit() # fit the model with all possible predictors 
+regressor_OLS.summary() # view the summary and P-value
+
+# remove the independent variable that has highest p-value (P>t) and t=0.05 = 5%
+X_opt = X[:, [0, 3]] #copy entire X
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit() # fit the model with all possible predictors 
+regressor_OLS.summary() # view the summary and P-value
