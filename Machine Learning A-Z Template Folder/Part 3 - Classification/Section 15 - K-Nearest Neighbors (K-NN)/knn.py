@@ -1,4 +1,5 @@
 # K-Nearest Neighbors (K-NN)
+# K-NN is a non Linear classifier
 
 # Importing the libraries
 import numpy as np
